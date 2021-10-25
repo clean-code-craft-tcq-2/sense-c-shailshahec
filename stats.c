@@ -30,7 +30,8 @@ int ledAlertCallCount = 0;
 //! \return            none
 //
 //************************************************************************************************** 
-struct Stats compute_statistics(const float* numberset, int setlength) {
+struct Stats compute_statistics(const float* numberset, int setlength) 
+{
     struct Stats s;
     s.average = 0;
     s.min = 0;
@@ -41,7 +42,7 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     float Numbertotal = 0;
     
 // To find the max, min, average from number
- for(int loopcount=0;loopcount<setlength;loopcount++)
+ for(loopcount=0;loopcount<setlength;loopcount++)
  {
      // check for minimum number
      if(numberset[loopcount]<min) 
