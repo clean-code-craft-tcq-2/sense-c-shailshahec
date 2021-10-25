@@ -49,11 +49,11 @@ struct Stats compute_statistics(const float* numberset, int setlength)
      {
         min= numberset[loopcount];
      }
-	 if(numberset[loopcount]> max) 
-	 {
-        max= numberset[loopcount];
-	 }
-	Numbertotal = Numbertotal + numberset[loopcount];
+    if(numberset[loopcount]> max) 
+    {
+       max= numberset[loopcount];
+    }
+    Numbertotal = Numbertotal + numberset[loopcount];
   }
     s.average = Numbertotal/setlength;
     s.min = min;
@@ -61,6 +61,7 @@ struct Stats compute_statistics(const float* numberset, int setlength)
 
     return s;
 }
+
 //**************************************************************************************************
 // FUNCTION:           check_and_alert
 //
@@ -73,10 +74,13 @@ struct Stats compute_statistics(const float* numberset, int setlength)
 //************************************************************************************************** 
 void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats)
 {
+    // check compute status greater then threshold
     if(computedStats.max > maxThreshold)
     {
+	// calling the led alert function
         alerters[0]();
-	    alerters[1]();
+	alerters[1]();
     }
 }
 
+/* #########################    End of File ################################ */
