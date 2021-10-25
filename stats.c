@@ -1,9 +1,33 @@
 #include "stats.h"
 
+/***************************************************************************************************
+*                                                                                                  *
+*  FILENAME:                                                                                      */
+/**\file       stats.c
+*
+*  \brief       source file for computing the statistics functionality
+
+*
+* FILE VERSION INFORMATION:  $Revision: $ 1.0.0
+*                            $Date:     $ 25 oct 2021
+*                            $Author:   $
+*
+* REVISION HISTORY: V1.0
+*
+***************************************************************************************************/
 int emailAlertCallCount = 0;
 int ledAlertCallCount = 0;
 
-
+//**************************************************************************************************
+// FUNCTION:           compute_statistics
+//
+//! \brief             function to compute average,minimum, maximum of number
+//!
+//! //! \param[in]     none		            
+//! //! \param[in]     none		         
+//! \return            none
+//
+//************************************************************************************************** 
 struct Stats compute_statistics(const float* numberset, int setlength) {
     struct Stats s;
     s.average = 0;
@@ -18,6 +42,16 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     return s;
 }
 
+//**************************************************************************************************
+// FUNCTION:           get_arrmax
+//
+//! \brief             function to compute maximum of number
+//!
+//! //! \param[in]     none		            
+//! //! \param[in]     none		         
+//! \return            none
+//
+//************************************************************************************************** 
 float get_arrmax(float a[], int num_elements)
 {
   int i, max;
@@ -33,6 +67,16 @@ float get_arrmax(float a[], int num_elements)
    return(max);
 }
 
+//**************************************************************************************************
+// FUNCTION:           get_arrmax
+//
+//! \brief             function to compute maximum of number
+//!
+//! //! \param[in]     none		            
+//! //! \param[in]     none		         
+//! \return            none
+//
+//************************************************************************************************** 
 float get_arrmin(float a[], int num_elements)
 {
    int i, min;
@@ -48,6 +92,16 @@ float get_arrmin(float a[], int num_elements)
    return(min);
 }
 
+//**************************************************************************************************
+// FUNCTION:           get_arrmax
+//
+//! \brief             function to compute maximum of number
+//!
+//! //! \param[in]     none		            
+//! //! \param[in]     none		         
+//! \return            none
+//
+//************************************************************************************************** 
 float get_aver(float a[], int num_elements)
 { 
  int sum,i;
@@ -63,6 +117,16 @@ float get_aver(float a[], int num_elements)
    return(avg);
 }
 
+//**************************************************************************************************
+// FUNCTION:           check_and_alert
+//
+//! \brief             function to compute maximum of number
+//!
+//! //! \param[in]     none		            
+//! //! \param[in]     none		         
+//! \return            none
+//
+//************************************************************************************************** 
 void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats)
 {
     if(computedStats.max> maxThreshold)
