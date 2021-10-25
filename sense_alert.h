@@ -1,9 +1,9 @@
 /***************************************************************************************************
 *                                                                                                  *
 *  FILENAME:                                                                                      */
-/**\file       stats.h
+/**\file       sense_alert.h
 *
-*  \brief       Header file for stats functionality
+*  \brief       Header file for selecting the senser alert
 
 *
 * FILE VERSION INFORMATION:  $Revision: $ 1.0.0
@@ -13,19 +13,15 @@
 * REVISION HISTORY: V1.0
 *
 ***************************************************************************************************/
-/**** typdefs/structures ***************************************************************************
-* Typedefs/structures to be made available to other modules.                                      */
-struct Stats
-{
-   float average;
-   float min;
-   float max;
-};
+
+// public global variable
+extern int emailAlertCallCount;
+extern int ledAlertCallCount;
 
 /**** public functions *****************************************************************************
 * Declarations of functions to be made available to other modules. Use SCOPE in front of each      *
 * line.                                                                                           */
-struct Stats compute_statistics(const float* numberset, int setlength);
+void emailAlerter(void);
+void ledAlerter(void);
 
-typedef void (*alerter_funcptr)();
-void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats);
+/* ################ End Of File ############################# */
