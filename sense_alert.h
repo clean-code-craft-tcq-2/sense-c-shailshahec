@@ -21,7 +21,7 @@ extern int ledAlertCallCount;
 /**** public functions *****************************************************************************
 * Declarations of functions to be made available to other modules. Use SCOPE in front of each      *
 * line.                                                                                           */
-void emailAlerter();
-void ledAlerter();
+void emailAlerter(void);
+void ledAlerter(void);
 
 /* ################ End Of File ############################# */
