@@ -37,10 +37,8 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     s.max = 0;
     float min = numberset[0];
     float max = numberset[0];
-    int loopcount = 0, sum = 0;
+    int loopcount = 0;
     float Numbertotal = 0;
-    float min = numberset[0];
-    float max = numberset[0];
     
 // To find the max, min, average from number
  for(int loopcount=0;loopcount<setlength;loopcount++)
